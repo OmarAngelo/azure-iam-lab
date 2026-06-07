@@ -20,6 +20,8 @@ $graphScopes = @(
     "Directory.ReadWrite.All"
     "RoleManagement.ReadWrite.Directory"
     "Policy.ReadWrite.ConditionalAccess"
+    "Policy.Read.All"
+    "Application.Read.All"
     "AuditLog.Read.All"
     "UserAuthenticationMethod.ReadWrite.All"
 )
