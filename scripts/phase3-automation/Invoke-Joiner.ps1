@@ -91,6 +91,7 @@ $userParams = @{
 
 try {
     $newUser = New-MgUser @userParams
+    $newUser | Out-Null
     Write-Host "      OK - Account created: $upn" -ForegroundColor Green
     Write-Host "           ID: $($newUser.Id)" -ForegroundColor Gray
 }
@@ -139,7 +140,7 @@ Write-Host "`n[4/4] Assigning licence..." -ForegroundColor Yellow
 $sku = Get-MgSubscribedSku | Where-Object { $_.SkuPartNumber -eq "AAD_PREMIUM_P2" }
 
 try {
-    Set-MgUserLicense -UserId $newUser.Id -AddLicenses @(@{ SkuId = $sku.SkuId }) -RemoveLicenses @()
+    Set-MgUserLicense -UserId $newUser.Id -AddLicenses @(@{ SkuId = $sku.SkuId }) -RemoveLicenses @() | Out-Null
     Write-Host "      OK - AAD Premium P2 assigned" -ForegroundColor Green
 }
 catch {
