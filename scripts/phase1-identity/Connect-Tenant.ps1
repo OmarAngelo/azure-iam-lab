@@ -24,6 +24,8 @@ $graphScopes = @(
     "Application.Read.All"
     "AuditLog.Read.All"
     "UserAuthenticationMethod.ReadWrite.All"
+    "IdentityRiskEvent.Read.All"
+    "IdentityRiskyUser.Read.All"
 )
 
 Write-Host "Connecting to Microsoft Graph..." -ForegroundColor Cyan
