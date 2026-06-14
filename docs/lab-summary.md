@@ -89,6 +89,15 @@ permissions — critical at any organisation with more than a handful of users.
 - Activation limited to 4-8 hours depending on role sensitivity
 - Every activation logged with justification — full audit trail
 
+**Audit finding and remediation**
+Running the privileged user audit (Phase 4) identified that one user held 
+both a permanent User Administrator role assignment AND a PIM eligible 
+assignment for the same role — a violation of least privilege, since the 
+permanent assignment defeats the purpose of PIM's zero-standing-privilege 
+model. This was remediated by removing the permanent assignment, leaving 
+only the PIM eligible one. This demonstrates the audit-remediate cycle that 
+forms the basis of ongoing access governance.
+
 **Key skills demonstrated:**
 - Conditional Access policy design and implementation
 - Break-glass account configuration to Microsoft best practice
